@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vattikunta Dinesh Chowdary - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Rajdhani', sans-serif;
+      background: radial-gradient(ellipse at top left, #0a0f2c, #000);
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+
+    .glow-btn {
+      background: transparent;
+      border: 2px solid #0ff;
+      color: #0ff;
+      padding: 10px 20px;
+      margin: 10px 0;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .glow-btn:hover {
+      background: #0ff;
+      color: #000;
+      box-shadow: 0 0 15px #0ff;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 999;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #0ff;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #0ff;
+    }
+
+    .tagline {
+      margin: 20px 0;
+      font-size: 1.2rem;
+    }
+
+    .animated-text::after {
+      content: "|";
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .skills-grid, .projects-grid, .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0ff, #0f0);
+      margin: 1rem auto;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #111;
+      border: 1px solid #0ff;
+      color: #0ff;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.6);
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #0ff;
+    }
+
+    body {
+      cursor: url('https://cdn.custom-cursor.com/db/13345/32/pixel-sword-cursor.png'), auto;
+    }
+
+    .project-card, .blog-card {
+      padding: 1.5rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover, .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    .project-card h3, .blog-card h4 {
+      color: #0ff;
+      margin-bottom: 10px;
+    }
+
+    .project-card p, .blog-card p {
+      color: #ddd;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .project-card .tech {
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .blog-card a.glow-btn {
+      margin-top: auto;
+      width: fit-content;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><strong>Dinesh</strong></div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h1>Vattikunta Dinesh Chowdary</h1>
+    <h2 class="animated-text">Full-Stack Web Developer</h2>
+    <p class="tagline">“Crafting futuristic and scalable web solutions from front to back.”</p>
+    <div>
+      <a href="#projects" class="glow-btn">Explore Projects</a>
+      <a href="#resume" class="glow-btn">Download Resume</a>
+    </div>
+  </section>
+
+  <section id="about" class="glass">
+    <h2>About Me</h2>
+   <img src="C:\Users\vatti\Downloads\Chrome\profile.jpg" alt="Vattikunta Dinesh Chowdary" style="width:100px; height:100px; border-radius:50%; object-fit:cover; display:block; margin:1rem auto; border:2px solid #0ff; box-shadow:0 0 12px rgba(0,255,255,0.4);">
+
+
+    <p>I am a passionate full-stack developer with experience in HTML, CSS, JavaScript, React, Git, Docker, and full web stacks. I love building modern, performant web experiences and contributing to open-source technologies.</p>
+  </section>
+
+  <section id="skills" class="glass">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="glass">
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JS, React, Tailwind, DOM</p>
+      </div>
+      <div class="glass">
+        <h3>Backend</h3>
+        <p>Node.js, Express, Docker, APIs</p>
+      </div>
+      <div class="glass">
+        <h3>Tools</h3>
+        <p>Git, GitHub, Docker, VSCode</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="glass">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card glass">
+        <h3>Hangman-Game</h3>
+        <p>Guess the hidden word one letter at a time before the stick figure is fully drawn!.</p>
+        <p class="tech">Tech Stack: JavaScript, Node.js, Express</p>
+        <div class="btn-group">
+          <a class="glow-btn" href="https://github.com/dineshvattikunta/Hangman-Game">View Live</a>
+          <a class="glow-btn" href="https://github.com/dineshvattikunta/Hangman-Game">GitHub Repo</a>
+        </div>
+      </div>
+      <div class="project-card glass">
+        <h3>E-commerce Page</h3>
+        <p> Enabled users to add products to a shopping cart with real-time quantity and price updates.
+.</p>
+        <p class="tech">Tech Stack: React, Node.js, MongoDB</p>
+        <div class="btn-group">
+          <a class="glow-btn" href="https://github.com/dineshvattikunta/WEB-PROJECT">View Live</a>
+          <a class="glow-btn" href="https://github.com/dineshvattikunta/WEB-PROJECT">GitHub Repo</a>
+        </div>
+      </div>
+      <div class="project-card glass">
+        <h3>DataDriven Portfolio</h3>
+        <p>Dynamic portfolio powered by JSON data.</p>
+        <p class="tech">Tech Stack: JS, Tailwind, Git</p>
+        <div class="btn-group">
+          <a class="glow-btn" href="#">View Live</a>
+          <a class="glow-btn" href="#">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="glass">
+    <h2>Latest Blog Posts</h2>
+    <div class="blog-grid">
+      <div class="blog-card glass">
+        <h4>June 2025</h4>
+        <p>Why Full-Stack is the Future of Web Development</p>
+        <a class="glow-btn" href="#">Read More</a>
+      </div>
+      <div class="blog-card glass">
+        <h4>May 2025</h4>
+        <p>Getting Started with Docker for Developers</p>
+        <a class="glow-btn" href="#">Read More</a>
+      </div>
+      <div class="blog-card glass">
+        <h4>April 2025</h4>
+        <p>Modern CSS Tips & Tricks for Glassmorphism</p>
+        <a class="glow-btn" href="#">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume" class="glass">
+    <h2>Resume</h2>
+    <a class="glow-btn" href="C:\Users\vatti\Downloads\Chrome\dinesh chowdary.pdf"download>Download Resume</a>
+  </section>
+
+  <section id="contact" class="glass">
+    <h2>Contact Me</h2>
+    <form action="mailto:dineshchowdary_vattikunta@srmap.edu.in" method="post" enctype="text/plain">
+      <input type="text" placeholder="Vattikunta Dinesh Chowdary " required>
+      <input type="email" placeholder="dineshchowdary_vattikunta@srmap.edu.in" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button class="glow-btn" type="submit">Send Message</button>
+    </form>
+    <p>Connect: <a href="https://github.com/dineshvattikunta">GitHub</a> | <a href="#">LinkedIn</a> | <a href="mailto:dineshchowdary_vattikunta@srmap.edu.in">Email</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Vattikunta Dinesh Chowdary</p>
+    <a href="#hero" class="back-to-top">↑ Back to Top</a>
+  </footer>
+
+  <script>
+    const texts = ["Full-Stack Web Developer", "Tech Enthusiast", "Open Source Contributor"];
+    let count = 0, index = 0, currentText = "", letter = "";
+    (function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      document.querySelector(".animated-text").textContent = letter;
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1000);
+      } else {
+        setTimeout(type, 100);
+      }
+    })();
+
+    const revealElements = document.querySelectorAll('.glass');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.target.style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+        entry.target.style.transform = entry.isIntersecting ? 'translateY(0)' : 'translateY(40px)';
+        entry.target.style.opacity = entry.isIntersecting ? '1' : '0';
+      });
+    }, { threshold: 0.2 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
